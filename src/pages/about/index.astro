@@ -1,0 +1,23 @@
+---
+const obj = {
+    my_name: 'Astro',
+    my_age: 1,
+    my_location: 'The Web'
+}
+const res = await fetch('https://jsonplaceholder.typicode.com/posts/1') // Fetching data from an API
+const data = await res.json();
+console.log("🚀 ~ data: ",data)
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro</title>
+	</head>
+	<body>
+		<p>{data.title}: {data.body}</p>
+	</body>
+</html>
